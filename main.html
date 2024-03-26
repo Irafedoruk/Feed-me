@@ -150,7 +150,53 @@
         label {
             font-size: 2em;
             font-weight: bold;
-        }        
+        }    
+        /* Стилі для модального вікна */
+        .modal {
+        display: none; /* Ховаємо початково */
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0,0,0,0.4);
+        }
+
+        .modal-content {
+        background-color: #fefefe;
+        margin: 15% auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+        max-width: 600px;
+        border-radius: 5px;
+        position: relative;
+        }
+
+        .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+        }
+        
+        .food-pet-match img {
+            width: 60px;
+            height: auto;
+        }
+        .arrow {
+            width: 15px;
+            height: auto;
+        }
     </style>
 </head>
 <body>
@@ -161,6 +207,42 @@
             <li><a href="#" id="resultsLink">Результати</a></li>
         </ul>
     </nav>
+    <!-- Модальне вікно для правил гри -->
+    <div id="rulesModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Правила гри</h2>
+            <p>Накорміть свою тваринку, вибравши відповідну їжу.</p>
+            <p>Виберіть рівень складності та грайте!</p>
+            <div class="food-pet-matches">
+                <div class="food-pet-match">
+                    <img src="./images/dog.png" alt="Собака">
+                    <img src="./images/arrow3.png" alt="->">
+                    <img src="./images/dog-bone.png" alt="Кістка">
+                </div>
+                <div class="food-pet-match">
+                    <img src="./images/cat.png" alt="Кіт">
+                    <img src="./images/arrow3.png" alt="->">
+                    <img src="./images/cat-milk.png" alt="Молоко">
+                </div>
+                <div class="food-pet-match">
+                    <img src="./images/monkey.png" alt="Мавпа">
+                    <img src="./images/arrow3.png" alt="->">
+                    <img src="./images/monkey-banana.png" alt="Банан">
+                </div>
+                <div class="food-pet-match">
+                    <img src="./images/mouse.png" alt="Мишка">
+                    <img src="./images/arrow3.png" alt="->">
+                    <img src="./images/mouse-cheeze.png" alt="Сир">
+                </div>
+                <div class="food-pet-match">
+                    <img src="./images/snail.png" alt="Равлик">
+                    <img src="./images/arrow3.png" alt="->">
+                    <img src="./images/snail-leaf.png" alt="Листочок">
+                </div>                
+            </div>
+        </div>
+    </div>
     <div class="game-container">    
         <!-- <div id="greetingMessage"></div>     -->
         <div name="chooseImg">

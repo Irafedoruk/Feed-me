@@ -6,9 +6,11 @@ const foodImageArea = document.getElementById('food-images');
 const counter = document.getElementById('counter');
 const playerNameInput = document.getElementById('playerName');
 const homeLink = document.getElementById('homeLink');
-
 const rulesLink = document.getElementById('rulesLink');
+const rulesModal = document.getElementById('rulesModal');
+const closeBtn = document.getElementsByClassName('close')[0];
 const resultsLink = document.getElementById('resultsLink');
+
 //const greetingMessage = document.getElementById('greetingMessage');
 //greetingMessage.textContent = `Привіт, ${playerName}!`;
 const difficultySection = document.querySelector('.difficulty');
@@ -186,11 +188,22 @@ function shuffle(array) {
     return array;
 }
 
-// Обробник кліку на "Правила"
+// Відкриття модального вікна при кліку на посилання "Правила"
 rulesLink.addEventListener('click', () => {
-    // Відображення модального вікна з правилами
-    alert('Тут будуть правила гри!');
-});
+    rulesModal.style.display = 'block';
+  });
+  
+  // Закриття модального вікна при кліку на кнопку закриття
+  closeBtn.addEventListener('click', () => {
+    rulesModal.style.display = 'none';
+  });
+  
+  // Закриття модального вікна при кліку поза вікном
+  window.addEventListener('click', (event) => {
+    if (event.target === rulesModal) {
+      rulesModal.style.display = 'none';
+    }
+  });
 
 // Обробник кліку на "Результати"
 resultsLink.addEventListener('click', () => {
