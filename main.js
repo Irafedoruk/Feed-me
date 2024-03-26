@@ -254,5 +254,5 @@ function finishGame(playerName) {
 
 
 homeLink.addEventListener('click', () => {
-    window.location.href="main.html";
+    window.location.href="index.html";
 });
